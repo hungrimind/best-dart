@@ -36,6 +36,7 @@
 **/.stamp
 **/.DS_Store
 **/.vscode
+**/.gitignore
 
 **/android/
 **/ios/
