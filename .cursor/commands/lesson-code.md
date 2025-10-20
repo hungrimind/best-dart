@@ -36,6 +36,7 @@ Each folder must be a valid, runnable Dart project with:
 ## Workflow (Test-Driven Learning)
 
 The lesson follows a test-driven approach:
+
 1. Create the solution code first (complete implementation)
 2. Write comprehensive tests that validate the solution
 3. Create the initial starter code (incomplete/empty implementation)
