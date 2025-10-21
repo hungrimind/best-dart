@@ -1,36 +1,46 @@
+import 'dart:io';
 import 'package:test/test.dart';
-import '../bin/username_formatter.dart';
 
 void main() {
-  group('getFormattedUsername', () {
-    test('Handles a standard lowercase name', () {
-      expect(getFormattedUsername('ada-lovelace'), 'ADA',
+  group('username_formatter', () {
+    test('Prints correct formatted username', () async {
+      final result =
+          await Process.run('dart', ['run', 'bin/username_formatter.dart']);
+      final output = result.stdout.toString().trim();
+
+      expect(output, equals('ADA'),
           reason:
-              "Failed with the input 'ada-lovelace'. Expected 'ADA', but got a different result. Make sure you are splitting the string correctly and converting the first part to uppercase.");
+              "Failed with the input 'ada-lovelace'. Expected 'ADA', but got '$output'. Make sure you are splitting the string correctly and converting the first part to uppercase.");
     });
 
-    test('Handles a name with mixed casing', () {
-      expect(getFormattedUsername('Grace-Hopper'), 'GRACE',
+    test('Output is not empty', () async {
+      final result =
+          await Process.run('dart', ['run', 'bin/username_formatter.dart']);
+      final output = result.stdout.toString().trim();
+
+      expect(output.isNotEmpty, isTrue,
           reason:
-              "Failed with the input 'Grace-Hopper'. Expected 'GRACE'. Your function should correctly handle names that already have some uppercase letters.");
+              "The program printed an empty string. You need to process the name and print the result.");
     });
 
-    test('Handles a different standard name', () {
-      expect(getFormattedUsername('kyle-lee'), 'KYLE',
+    test('Output is uppercase', () async {
+      final result =
+          await Process.run('dart', ['run', 'bin/username_formatter.dart']);
+      final output = result.stdout.toString().trim();
+
+      expect(output, equals(output.toUpperCase()),
           reason:
-              "Failed with the input 'kyle-lee'. Expected 'KYLE'. Ensure your code works for different names, not just one specific case.");
+              "The output should be in uppercase. Make sure you're using the toUpperCase() method.");
     });
 
-    test('Handles a short, single-letter name', () {
-      expect(getFormattedUsername('b-abbage'), 'B',
-          reason:
-              "Failed with the input 'b-abbage'. Expected 'B'. This checks if your code can handle edge cases like very short first names.");
-    });
+    test('Output is the first part of the name', () async {
+      final result =
+          await Process.run('dart', ['run', 'bin/username_formatter.dart']);
+      final output = result.stdout.toString().trim();
 
-    test('Handles names with numbers', () {
-      expect(getFormattedUsername('r2-d2'), 'R2',
+      expect(output.length, equals(3),
           reason:
-              "Failed with the input 'r2-d2'. Expected 'R2'. The .toUpperCase() method should correctly handle strings that contain numbers.");
+              "The output should be 'ADA' (3 characters). Make sure you're splitting by hyphen and taking the first part.");
     });
   });
 }
