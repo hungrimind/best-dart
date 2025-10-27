@@ -1,0 +1,8 @@
+name: delayed_summary
+description: A lesson on using the late keyword for delayed initialization of non-nullable variables
+version: 1.0.0
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
