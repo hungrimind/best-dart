@@ -2,38 +2,37 @@ import 'dart:io';
 import 'package:test/test.dart';
 
 void main() {
-  group('Print Function Challenge', () {
-    test('should print the exact string "Learning Dart is fun!"', () async {
+  group('Debugging with Print Challenge', () {
+    test('should compile and run without errors', () async {
+      final result = await Process.run('dart', ['bin/first_output.dart']);
+      
+      expect(result.exitCode, equals(0),
+          reason:
+              'Your code has compilation errors. Check for syntax errors and make sure your code compiles.');
+    });
+
+    test('should print the correct result "The result is: 8"', () async {
       final result = await Process.run('dart', ['bin/first_output.dart']);
       final output = result.stdout.toString().trim();
 
       expect(output, isNotEmpty,
           reason:
-              'You should print something to the console. The output is currently empty.');
-      expect(output, equals('Learning Dart is fun!'),
+              'Your program should print something to the console. Use print statements to debug!');
+      
+      // Check that the final output contains the correct result
+      expect(output, contains('The result is: 8'),
           reason:
-              'The output did not match the required string. Check for typos and proper casing.');
+              'The output should include "The result is: 8". Use print statements to see what value the variable `three` actually has, then fix it.');
     });
 
-    test('should not print any extra lines', () async {
+    test('should demonstrate debugging with print statements', () async {
       final result = await Process.run('dart', ['bin/first_output.dart']);
       final output = result.stdout.toString().trim();
       final lines = output.split('\n');
 
-      expect(lines.length, equals(1),
-          reason: 'You should only print one line of text.');
-    });
-
-    test('should have correct casing', () async {
-      final result = await Process.run('dart', ['bin/first_output.dart']);
-      final output = result.stdout.toString().trim();
-
-      expect(output, equals('Learning Dart is fun!'),
-          reason:
-              'The string must have the exact casing as specified: "Learning Dart is fun!"');
-      expect(output, isNot(equals('learning dart is fun!')),
-          reason:
-              'Incorrect casing detected. Remember Dart is case-sensitive!');
+      // We expect at least some print output showing the debugging process
+      expect(lines.length, greaterThanOrEqualTo(1),
+          reason: 'Add print statements to see what values your variables have!');
     });
   });
 }
