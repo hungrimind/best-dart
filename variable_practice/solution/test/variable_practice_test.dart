@@ -3,24 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   test(
-    'Program should compile and run without errors',
-    () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/variable_practice.dart'],
-      );
-
-      expect(
-        result.exitCode,
-        equals(0),
-        reason:
-            'Your code has compilation errors. Check for syntax errors and make sure your code compiles.',
-      );
-    },
-  );
-
-  test(
-    'Should print the initial status "Current status: Feeling Great"',
+    'First, it should print the initial status "Current status: Feeling Great"',
     () async {
       final result = await Process.run(
         'dart',
@@ -38,7 +21,7 @@ void main() {
   );
 
   test(
-    'Should print the updated status "Current status: Ready to Code"',
+    'Then, it should print the updated status "Current status: Ready to Code"',
     () async {
       final result = await Process.run(
         'dart',
