@@ -1,3 +1,3 @@
 void main() {
-  print('Hungrimind');
+  print('Hello, World!');
 }
