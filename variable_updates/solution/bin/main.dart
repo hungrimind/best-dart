@@ -15,13 +15,4 @@ void main() {
   //    Calculate the result of `potionCount` multiplied by `goldPerPotion` and store it in the `totalCost` box.
   var totalCost = potionCount * goldPerPotion;
   print('Initial cost: $totalCost');
-
-  // 4. The wizard liked the potions and bought 2 more!
-  //    Update the value in the `potionCount` box by adding 2 to its current value.
-  potionCount = potionCount + 2;
-
-  // 5. Recalculate the new total cost.
-  //    Update the `totalCost` box with the new total based on the updated potion count.
-  totalCost = potionCount * goldPerPotion;
-  print('Final cost: $totalCost');
 }
