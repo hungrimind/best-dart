@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:test/test.dart';
 
 void main() {
-  test('Displays the sum of two positive numbers', () async {
+  test('Adds two positive numbers', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -24,7 +24,7 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('Displays the sum of two numbers with zero', () async {
+  test('Adds two numbers with zero', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -42,7 +42,7 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('Displays the sum of a negative and positive number', () async {
+  test('Adds a negative and positive number', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -60,7 +60,7 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('Displays the sum of two negative numbers', () async {
+  test('Adds two negative numbers', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
