@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:test/test.dart';
-import '../bin/student.dart' as student;
+import '../bin/assign_variable.dart' as student;
 
 void main() {
   test('main should print exactly 10 to the console', () {

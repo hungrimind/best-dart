@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:test/test.dart';
-import '../lib/student.dart' as student;
+import '../bin/assign_variable.dart' as student;
 
 void main() {
   group('Variable assignment inside main', () {
