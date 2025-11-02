@@ -5,7 +5,7 @@ void main() {
 
   // 1. Read the user's input from the console.
   // 2. Store the input in a variable named 'city'.
-  String? city; // TODO: Replace 'null' with the function that reads user input.
+  String? city;
 
   print('Wow, $city sounds like a great place to visit!');
 }
