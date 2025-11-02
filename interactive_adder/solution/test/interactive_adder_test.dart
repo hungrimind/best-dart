@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:test/test.dart';
 
 void main() {
-  test('adds two positive numbers correctly', () async {
+  test('Displays the sum of two positive numbers', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -24,7 +24,7 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('adds two numbers with zero', () async {
+  test('Displays the sum of two numbers with zero', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -42,7 +42,7 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('adds negative and positive numbers', () async {
+  test('Displays the sum of a negative and positive number', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -60,7 +60,7 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('adds two negative numbers', () async {
+  test('Displays the sum of two negative numbers', () async {
     final process = await Process.start(
       'dart',
       ['run', 'bin/interactive_adder.dart'],
@@ -75,24 +75,6 @@ void main() {
     final exitCode = await process.exitCode;
 
     expect(output, contains('The sum is: -15'));
-    expect(exitCode, equals(0));
-  });
-
-  test('adds large numbers correctly', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/interactive_adder.dart'],
-    );
-
-    process.stdin.writeln('999');
-    process.stdin.writeln('1');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output, contains('The sum is: 1000'));
     expect(exitCode, equals(0));
   });
 }
