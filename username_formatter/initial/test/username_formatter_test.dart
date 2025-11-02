@@ -10,7 +10,7 @@ void main() {
 
       expect(output, equals('ADA'),
           reason:
-              "Failed with the input 'ada-lovelace'. Expected 'ADA', but got '$output'. Make sure you are splitting the string correctly and converting the first part to uppercase.");
+              "Failed with the input 'ada-lovelace'. Expected 'ADA', but got '$output'. Make sure you are using substring(0, 3) to get the first 3 characters and converting them to uppercase.");
     });
 
     test('Output is not empty', () async {
@@ -40,7 +40,7 @@ void main() {
 
       expect(output.length, equals(3),
           reason:
-              "The output should be 'ADA' (3 characters). Make sure you're splitting by hyphen and taking the first part.");
+              "The output should be 'ADA' (3 characters). Make sure you're using substring(0, 3) to get the first 3 characters of the string.");
     });
   });
 }
