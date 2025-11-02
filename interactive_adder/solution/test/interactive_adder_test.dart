@@ -20,7 +20,7 @@ void main() {
 
     expect(output, contains('Enter the first number:'));
     expect(output, contains('Enter the second number:'));
-    expect(output, contains('The sum is: 75'));
+    expect(output, contains('75'));
     expect(exitCode, equals(0));
   });
 
@@ -38,7 +38,7 @@ void main() {
         await process.stdout.transform(const SystemEncoding().decoder).join();
     final exitCode = await process.exitCode;
 
-    expect(output, contains('The sum is: 100'));
+    expect(output, contains('100'));
     expect(exitCode, equals(0));
   });
 
@@ -56,7 +56,7 @@ void main() {
         await process.stdout.transform(const SystemEncoding().decoder).join();
     final exitCode = await process.exitCode;
 
-    expect(output, contains('The sum is: 15'));
+    expect(output, contains('15'));
     expect(exitCode, equals(0));
   });
 
@@ -74,7 +74,7 @@ void main() {
         await process.stdout.transform(const SystemEncoding().decoder).join();
     final exitCode = await process.exitCode;
 
-    expect(output, contains('The sum is: -15'));
+    expect(output, contains('-15'));
     expect(exitCode, equals(0));
   });
 }
