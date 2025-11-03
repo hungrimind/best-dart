@@ -1,4 +1,4 @@
-name: null_aware_access
+name: main
 description: Learn to use the null-aware access operator (?.) to safely access properties on nullable values
 version: 1.0.0
 
