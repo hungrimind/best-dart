@@ -28,20 +28,50 @@ Each folder must be a valid, runnable Dart project with:
 
 ## Content Guidelines
 
-- **initial/**: Contains starter code with TODOs, incomplete implementations, or basic scaffolding for learners to complete
-- **solution/**: Contains complete, working code that passes all tests
+### Code Simplicity
+
+- **Keep code SIMPLE**: Both `initial/` and `solution/` code should focus on the core concept being taught
+- **Starting code**: Contains starter code with incomplete implementations, or basic scaffolding for learners to complete
+- **Solution code**: Contains complete, working code that demonstrates the lesson concept
+- **All code must be runnable**: Both folders should include complete `main()` functions and all necessary code
+- **NO test infrastructure in code**: The code should NOT include any test helpers, test utilities, or code written specifically to make testing easier
+- **Do NOT add complexity for testing**: Never make the code more complex just to make testing easier. The code should be as simple as possible while teaching the concept
 - Both folders should have identical `pubspec.yaml` and `test/` files
 - Tests are copied from `solution/test/` to `initial/test/` to provide immediate feedback to learners
+
+### Test Quality 
+
+- **Tests should be creative and comprehensive**: Write tests that validate the solution from the core concepts of the lesson
+- **Tests must NOT require code modifications**: The solution code should pass tests without any modifications - tests should adapt to the code, not the other way around
+- **Helpful test names**: Each test should have a descriptive name that clearly indicates what aspect is being tested and what would be wrong if it fails
+- **Test reasons/explanations**: Include `reason` parameters (or descriptive comments) in tests that explain what is wrong to the end user when tests fail
+- **Tests validate the learning objective**: Tests should thoroughly check that the core concept is correctly implemented
+- **Tests fail meaningfully**: Tests should fail on `initial/` code with clear, helpful error messages that guide learners
+- **Tests pass on solution**: All tests should pass on `solution/` code to confirm the implementation is correct
 
 ## Workflow (Test-Driven Learning)
 
 The lesson follows a test-driven approach:
 
-1. Create the solution code first (complete implementation)
-2. Write comprehensive tests that validate the solution
-3. Create the initial starter code (incomplete/empty implementation)
-4. Copy the test file to the initial folder
-5. Verify tests fail meaningfully on initial code
+1. **Create the solution code first**: Write complete, simple implementation focused on the core concept
+   - Keep it minimal - only what's needed to teach the lesson
+   - Ensure it has a complete `main()` function and is runnable
+   - Do NOT add complexity for testing purposes
+
+2. **Write creative, comprehensive tests**: Create thorough tests that validate the solution
+   - Test from multiple angles and edge cases
+   - Use descriptive test names that explain what's being tested
+   - Include `reason` parameters or comments explaining what's wrong if tests fail
+   - Tests should work with the solution code as-is (no modifications needed)
+
+3. **Create the initial starter code**: Write incomplete/empty implementation
+   - Remove or stub out key parts that demonstrate the learning objective
+   - Keep the same structure and simplicity as the solution
+
+4. **Copy the test file** from `solution/test/` to `initial/test/` (identical test files in both directories)
+
+5. **Verify tests fail meaningfully** on initial code with clear, helpful error messages
+
 6. Learners will see failing tests → write code → see tests pass
 
 ## Validation
@@ -54,4 +84,6 @@ After creating the lesson:
 4. Run `dart test` in the `solution/` directory to verify tests **PASS**
 5. Ensure the difference between `initial/` and `solution/` clearly demonstrates the learning objective
 
-You will be provided with the lesson idea and code. Your job is to organize it into a properly structured, runnable Dart project following this format.
+## Summary
+
+**Remember**: The code should be **simple and focused** on the lesson concept. The **tests should be the creative part** that thoroughly validates the solution without requiring code complexity. Keep starting code and solution code minimal - include all necessary code including `main()` functions, but avoid any test infrastructure or complexity added just for testing. Write comprehensive, well-named tests with helpful error messages that guide learners toward the solution.
