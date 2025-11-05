@@ -39,7 +39,7 @@ Each folder must be a valid, runnable Dart project with:
 - Both folders should have identical `pubspec.yaml` and `test/` files
 - Tests are copied from `solution/test/` to `initial/test/` to provide immediate feedback to learners
 
-### Test Quality 
+### Test Quality
 
 - **Tests should be creative and comprehensive**: Write tests that validate the solution from the core concepts of the lesson
 - **Tests must NOT require code modifications**: The solution code should pass tests without any modifications - tests should adapt to the code, not the other way around

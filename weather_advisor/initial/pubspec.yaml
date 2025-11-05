@@ -1,0 +1,10 @@
+name: weather_advisor
+description: Learn to use if statements with conditional expressions to control program flow
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
+
