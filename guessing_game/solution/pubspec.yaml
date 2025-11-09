@@ -1,0 +1,10 @@
+name: guessing_game
+description: A number guessing game that uses while loops to repeatedly ask for user input until the correct number is guessed.
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
+

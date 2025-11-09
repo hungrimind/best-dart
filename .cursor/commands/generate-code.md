@@ -59,13 +59,15 @@ The lesson follows a test-driven approach:
    - Do NOT add complexity for testing purposes
 
 2. **Write creative, comprehensive tests**: Create thorough tests that validate the solution
-   - Test from multiple angles and edge cases
+   - Test from multiple angles focusing on core functionality
    - Use descriptive test names that explain what's being tested
    - Include `reason` parameters or comments explaining what's wrong if tests fail
    - Tests should work with the solution code as-is (no modifications needed)
+   - Do NOT test edge cases - focus only on the core learning objectives
 
 3. **Create the initial starter code**: Write incomplete/empty implementation
    - Remove or stub out key parts that demonstrate the learning objective
+   - **Include all code that is NOT part of the learning objective**: If the lesson is about loops, include all the code inside the loop. If the lesson is about conditionals, include all setup code. Only remove/stub the core concept being taught.
    - Keep the same structure and simplicity as the solution
 
 4. **Copy the test file** from `solution/test/` to `initial/test/` (identical test files in both directories)
