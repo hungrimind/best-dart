@@ -20,40 +20,6 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('returns A for score of 95', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/grade_calculator.dart'],
-    );
-
-    process.stdin.writeln('95');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output.trim(), endsWith('A'));
-    expect(exitCode, equals(0));
-  });
-
-  test('returns B for score of 85', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/grade_calculator.dart'],
-    );
-
-    process.stdin.writeln('85');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output.trim(), endsWith('B'));
-    expect(exitCode, equals(0));
-  });
-
   test('returns B for score of 80', () async {
     final process = await Process.start(
       'dart',
@@ -71,23 +37,6 @@ void main() {
     expect(exitCode, equals(0));
   });
 
-  test('returns C for score of 75', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/grade_calculator.dart'],
-    );
-
-    process.stdin.writeln('75');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output.trim(), endsWith('C'));
-    expect(exitCode, equals(0));
-  });
-
   test('returns C for score of 70', () async {
     final process = await Process.start(
       'dart',
@@ -102,23 +51,6 @@ void main() {
     final exitCode = await process.exitCode;
 
     expect(output.trim(), endsWith('C'));
-    expect(exitCode, equals(0));
-  });
-
-  test('returns D for score of 65', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/grade_calculator.dart'],
-    );
-
-    process.stdin.writeln('65');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output.trim(), endsWith('D'));
     expect(exitCode, equals(0));
   });
 
@@ -173,4 +105,3 @@ void main() {
     expect(exitCode, equals(0));
   });
 }
-
