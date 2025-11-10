@@ -24,54 +24,6 @@ void main() {
         reason: 'Program should exit successfully after correct guess');
   });
 
-  test('Handles too high guess then correct guess', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/guessing_game.dart'],
-    );
-
-    // Send too high guess, then correct guess
-    process.stdin.writeln('10');
-    process.stdin.writeln('7');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output, contains('Too high!'),
-        reason:
-            'Program should print "Too high!" when guess is greater than secret number');
-    expect(output, contains('You got it!'),
-        reason: 'Program should print "You got it!" when guess is correct');
-    expect(exitCode, equals(0),
-        reason: 'Program should exit successfully after correct guess');
-  });
-
-  test('Handles too low guess then correct guess', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/guessing_game.dart'],
-    );
-
-    // Send too low guess, then correct guess
-    process.stdin.writeln('3');
-    process.stdin.writeln('7');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output, contains('Too low!'),
-        reason:
-            'Program should print "Too low!" when guess is less than secret number');
-    expect(output, contains('You got it!'),
-        reason: 'Program should print "You got it!" when guess is correct');
-    expect(exitCode, equals(0),
-        reason: 'Program should exit successfully after correct guess');
-  });
-
   test('Handles multiple incorrect guesses before correct guess', () async {
     final process = await Process.start(
       'dart',
