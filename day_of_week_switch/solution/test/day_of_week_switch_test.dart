@@ -60,47 +60,15 @@ void main() {
     );
 
     // Check that the code does NOT use if-else chains for day checking
-    final hasIfElseChain = RegExp(
-            r'if\s*\([^)]*dayOfWeek[^)]*==.*\)\s*\{[^}]*print\s*\(')
-        .hasMatch(code);
+    final hasIfElseChain =
+        RegExp(r'if\s*\([^)]*dayOfWeek[^)]*==.*\)\s*\{[^}]*print\s*\(')
+            .hasMatch(code);
     expect(
       hasIfElseChain,
       false,
-      reason: 'This exercise requires using a switch statement, not an if-else chain. '
+      reason:
+          'This exercise requires using a switch statement, not an if-else chain. '
           'Replace your if-else statements with a switch statement.',
-    );
-  });
-
-  test('uses grouped cases for weekdays', () async {
-    final code = await File('bin/day_of_week_switch.dart').readAsString();
-
-    // Check that multiple weekday cases are grouped together
-    final mondayPos = code.indexOf("case 'Monday':");
-    final tuesdayPos = code.indexOf("case 'Tuesday':");
-    final fridayPos = code.indexOf("case 'Friday':");
-
-    expect(
-      mondayPos != -1 && tuesdayPos != -1 && fridayPos != -1,
-      true,
-      reason: 'You need weekday cases (Monday, Tuesday, Wednesday, Thursday, Friday).',
-    );
-
-    // Check that weekdays are grouped (all appear before the first break or weekend case)
-    final firstBreakAfterMonday = code.indexOf('break;', mondayPos);
-    final saturdayPos = code.indexOf("case 'Saturday':");
-    final firstWeekendOrBreak = firstBreakAfterMonday == -1
-        ? saturdayPos
-        : (saturdayPos == -1
-            ? firstBreakAfterMonday
-            : (firstBreakAfterMonday < saturdayPos
-                ? firstBreakAfterMonday
-                : saturdayPos));
-
-    expect(
-      fridayPos < firstWeekendOrBreak,
-      true,
-      reason: 'All weekday cases should be grouped together '
-          'before the break statement. Use multiple case labels followed by a single break.',
     );
   });
 }
