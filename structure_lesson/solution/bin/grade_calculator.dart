@@ -2,14 +2,14 @@ import 'dart:io';
 
 void main() {
   // Prompt the user to enter a numerical score
-  print('Please enter the student\'s score:');
-  
+  print('Please enter the grade:');
+
   // Read the input from the console
   String input = stdin.readLineSync()!;
-  
+
   // Convert the input string to a number
   int score = int.parse(input);
-  
+
   // Use an if/else if/else chain to determine the letter grade
   String grade;
   if (score >= 90) {
@@ -23,8 +23,7 @@ void main() {
   } else {
     grade = 'F';
   }
-  
+
   // Print the letter grade to the console
   print(grade);
 }
-

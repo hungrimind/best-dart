@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   // Prompt the user to enter a numerical score
-  print('Please enter the student\'s score:');
+  print('Please enter the grade:');
 
   // Read the input from the console
   String input = stdin.readLineSync()!;
