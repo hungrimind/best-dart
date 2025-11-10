@@ -15,7 +15,7 @@ void main() {
         await process.stdout.transform(const SystemEncoding().decoder).join();
     final exitCode = await process.exitCode;
 
-    expect(output, contains('Please enter the student\'s score:'));
+    expect(output, contains('Please enter the grade:'));
     expect(output.trim(), endsWith('A'));
     expect(exitCode, equals(0));
   });
@@ -181,13 +181,14 @@ void main() {
     expect(
       hasSwitchStatement,
       true,
-      reason:
-          'This exercise requires using a switch statement. '
+      reason: 'This exercise requires using a switch statement. '
           'Make sure you have written: switch (score) { ... }',
     );
 
     // Check that the code does NOT use if-else chains for grade assignment
-    final hasIfElseChain = RegExp(r'if\s*\([^)]*score[^)]*>=.*\)\s*\{[^}]*grade\s*=').hasMatch(code);
+    final hasIfElseChain =
+        RegExp(r'if\s*\([^)]*score[^)]*>=.*\)\s*\{[^}]*grade\s*=')
+            .hasMatch(code);
     expect(
       hasIfElseChain,
       false,
@@ -245,8 +246,7 @@ void main() {
     expect(
       hasDefaultCase,
       true,
-      reason:
-          'You need a default case to handle scores below 60. '
+      reason: 'You need a default case to handle scores below 60. '
           'Add: default: followed by grade = \'F\';',
     );
   });
@@ -256,19 +256,24 @@ void main() {
 
     // Check that each case assigns to grade variable
     final hasCase90 = RegExp(r'case\s*>=\s*90').hasMatch(code);
-    final hasGradeA = RegExp(r"grade\s*=\s*[']A[']").hasMatch(code) || RegExp(r'grade\s*=\s*["]A["]').hasMatch(code);
-    
+    final hasGradeA = RegExp(r"grade\s*=\s*[']A[']").hasMatch(code) ||
+        RegExp(r'grade\s*=\s*["]A["]').hasMatch(code);
+
     final hasCase80 = RegExp(r'case\s*>=\s*80').hasMatch(code);
-    final hasGradeB = RegExp(r"grade\s*=\s*[']B[']").hasMatch(code) || RegExp(r'grade\s*=\s*["]B["]').hasMatch(code);
-    
+    final hasGradeB = RegExp(r"grade\s*=\s*[']B[']").hasMatch(code) ||
+        RegExp(r'grade\s*=\s*["]B["]').hasMatch(code);
+
     final hasCase70 = RegExp(r'case\s*>=\s*70').hasMatch(code);
-    final hasGradeC = RegExp(r"grade\s*=\s*[']C[']").hasMatch(code) || RegExp(r'grade\s*=\s*["]C["]').hasMatch(code);
-    
+    final hasGradeC = RegExp(r"grade\s*=\s*[']C[']").hasMatch(code) ||
+        RegExp(r'grade\s*=\s*["]C["]').hasMatch(code);
+
     final hasCase60 = RegExp(r'case\s*>=\s*60').hasMatch(code);
-    final hasGradeD = RegExp(r"grade\s*=\s*[']D[']").hasMatch(code) || RegExp(r'grade\s*=\s*["]D["]').hasMatch(code);
-    
+    final hasGradeD = RegExp(r"grade\s*=\s*[']D[']").hasMatch(code) ||
+        RegExp(r'grade\s*=\s*["]D["]').hasMatch(code);
+
     final hasDefault = RegExp(r'\bdefault\s*:').hasMatch(code);
-    final hasGradeF = RegExp(r"grade\s*=\s*[']F[']").hasMatch(code) || RegExp(r'grade\s*=\s*["]F["]').hasMatch(code);
+    final hasGradeF = RegExp(r"grade\s*=\s*[']F[']").hasMatch(code) ||
+        RegExp(r'grade\s*=\s*["]F["]').hasMatch(code);
 
     expect(
       hasCase90 && hasGradeA,

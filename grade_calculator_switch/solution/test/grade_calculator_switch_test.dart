@@ -15,7 +15,7 @@ void main() {
         await process.stdout.transform(const SystemEncoding().decoder).join();
     final exitCode = await process.exitCode;
 
-    expect(output, contains('Please enter the student\'s score:'));
+    expect(output, contains('Please enter the grade:'));
     expect(output.trim(), endsWith('A'));
     expect(exitCode, equals(0));
   });
