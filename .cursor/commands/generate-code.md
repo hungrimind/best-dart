@@ -41,13 +41,16 @@ Each folder must be a valid, runnable Dart project with:
 
 ### Test Quality
 
-- **Tests should be creative and comprehensive**: Write tests that validate the solution from the core concepts of the lesson
+- **Focus on core functionality only**: Write tests that validate the core learning objective, not every possible edge case or variation
+- **Keep tests minimal**: Typically aim for 3-7 tests total. Test representative examples rather than exhaustive coverage
+- **Test the concept, not every instance**: If the lesson requires handling multiple similar cases, test 1-2 representative examples rather than testing every single case
 - **Tests must NOT require code modifications**: The solution code should pass tests without any modifications - tests should adapt to the code, not the other way around
 - **Helpful test names**: Each test should have a descriptive name that clearly indicates what aspect is being tested and what would be wrong if it fails
 - **Test reasons/explanations**: Include `reason` parameters (or descriptive comments) in tests that explain what is wrong to the end user when tests fail
-- **Tests validate the learning objective**: Tests should thoroughly check that the core concept is correctly implemented
+- **Tests validate the learning objective**: Tests should check that the core concept is correctly implemented, not every possible variation
 - **Tests fail meaningfully**: Tests should fail on `initial/` code with clear, helpful error messages that guide learners
 - **Tests pass on solution**: All tests should pass on `solution/` code to confirm the implementation is correct
+- **Avoid over-testing**: Don't test every single input value, edge case, or variation. Focus on demonstrating the core concept works correctly
 
 ## Workflow (Test-Driven Learning)
 
@@ -58,12 +61,13 @@ The lesson follows a test-driven approach:
    - Ensure it has a complete `main()` function and is runnable
    - Do NOT add complexity for testing purposes
 
-2. **Write creative, comprehensive tests**: Create thorough tests that validate the solution
-   - Test from multiple angles focusing on core functionality
+2. **Write focused, minimal tests**: Create tests that validate the core functionality
+   - Test representative examples focusing on core functionality (typically 3-7 tests total)
    - Use descriptive test names that explain what's being tested
    - Include `reason` parameters or comments explaining what's wrong if tests fail
    - Tests should work with the solution code as-is (no modifications needed)
-   - Do NOT test edge cases - focus only on the core learning objectives
+   - **Do NOT test every single case or edge case** - focus only on demonstrating the core learning objective works
+   - Test 1-2 representative examples rather than exhaustive coverage
 
 3. **Create the initial starter code**: Write incomplete/empty implementation
    - Remove or stub out key parts that demonstrate the learning objective
@@ -88,4 +92,4 @@ After creating the lesson:
 
 ## Summary
 
-**Remember**: The code should be **simple and focused** on the lesson concept. The **tests should be the creative part** that thoroughly validates the solution without requiring code complexity. Keep starting code and solution code minimal - include all necessary code including `main()` functions, but avoid any test infrastructure or complexity added just for testing. Write comprehensive, well-named tests with helpful error messages that guide learners toward the solution.
+**Remember**: The code should be **simple and focused** on the lesson concept. The **tests should validate core functionality** without requiring code complexity. Keep starting code and solution code minimal - include all necessary code including `main()` functions, but avoid any test infrastructure or complexity added just for testing. Write **focused, minimal tests** (typically 3-7 tests) that validate the core learning objective with representative examples, not exhaustive coverage of every possible case or edge case.

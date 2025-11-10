@@ -1,0 +1,10 @@
+name: day_of_week_switch
+description: Learn to use switch statements with grouped cases to categorize weekdays and weekends
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
+
