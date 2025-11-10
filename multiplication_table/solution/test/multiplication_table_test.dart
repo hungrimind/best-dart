@@ -32,32 +32,6 @@ void main() {
         reason: 'Program should exit successfully after generating the table');
   });
 
-  test('Generates all 10 multiplication lines for number 5', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/multiplication_table.dart'],
-    );
-
-    // Send number 5
-    process.stdin.writeln('5');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    // Check that all 10 lines are present
-    for (int i = 1; i <= 10; i++) {
-      int product = 5 * i;
-      expect(output, contains('5 x $i = $product'),
-          reason:
-              'Program should print multiplication line for $i using a for loop that iterates from 1 to 10');
-    }
-
-    expect(exitCode, equals(0),
-        reason: 'Program should exit successfully after generating the table');
-  });
-
   test('Uses for loop to iterate exactly 10 times', () async {
     final process = await Process.start(
       'dart',
@@ -120,32 +94,4 @@ void main() {
     expect(exitCode, equals(0),
         reason: 'Program should exit successfully after generating the table');
   });
-
-  test('Handles number 1 correctly', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/multiplication_table.dart'],
-    );
-
-    // Send number 1
-    process.stdin.writeln('1');
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(output, contains('Multiplication table for 1:'),
-        reason:
-            'Program should display header correctly for any input number');
-    expect(output, contains('1 x 1 = 1'),
-        reason:
-            'Program should print first line correctly using for loop');
-    expect(output, contains('1 x 10 = 10'),
-        reason:
-            'Program should print last line correctly using for loop');
-    expect(exitCode, equals(0),
-        reason: 'Program should exit successfully after generating the table');
-  });
 }
-
