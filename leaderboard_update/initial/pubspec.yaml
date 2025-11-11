@@ -1,0 +1,10 @@
+name: leaderboard_update
+description: Learn to access and update individual elements in a List using index positions and the length property
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
+
