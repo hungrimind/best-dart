@@ -73,6 +73,7 @@ The lesson follows a test-driven approach:
    - Remove or stub out key parts that demonstrate the learning objective
    - **Include all code that is NOT part of the learning objective**: If the lesson is about loops, include all the code inside the loop. If the lesson is about conditionals, include all setup code. Only remove/stub the core concept being taught.
    - Keep the same structure and simplicity as the solution
+   - **Avoid giving away method names or implementation details in comments**: Comments should describe WHAT needs to be done, not HOW to do it. Don't mention specific method names (e.g., `.add()`, `.remove()`) or implementation details that would make the solution obvious
 
 4. **Copy the test file** from `solution/test/` to `initial/test/` (identical test files in both directories)
 
