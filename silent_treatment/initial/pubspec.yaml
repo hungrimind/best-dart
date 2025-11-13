@@ -2,7 +2,7 @@ name: silent_treatment
 description: Learn how to use single-line comments to prevent code from executing
 version: 1.0.0
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.10.0 <4.0.0"
 
 dev_dependencies:
   test: ^1.25.0
