@@ -13,7 +13,7 @@ Each folder must be a valid, runnable Dart project with:
    - `name:` matching the lesson name
    - `description:` brief explanation of the lesson
    - `version: 1.0.0`
-   - `environment:` with SDK constraint `'>=3.0.0 <4.0.0'`
+   - `environment:` with SDK constraint `'>=3.10.0 <4.0.0'`
    - `dev_dependencies:` with `test: ^1.25.0`
 
 2. **bin/** folder - Contains the main Dart file(s)
