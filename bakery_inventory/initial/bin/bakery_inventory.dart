@@ -10,7 +10,5 @@ void main() {
   // 1. New Delivery: Add 30 cookies to the inventory
   // 2. A Big Sale: Update croissant stock (subtract 5 from current count)
   // 3. Discontinued Item: Remove baguette from the inventory
-  // 4. Final Check: Print the final inventory map
-
+  print(bakeryInventory);
 }
-

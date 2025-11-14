@@ -15,6 +15,5 @@ void main() {
   // 3. Discontinued Item: Remove baguette
   bakeryInventory.remove('baguette');
 
-  // 4. Final Check: Print the final inventory
   print(bakeryInventory);
 }
