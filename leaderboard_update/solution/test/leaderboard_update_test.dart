@@ -3,15 +3,16 @@ import 'package:test/test.dart';
 
 void main() {
   test('Should print the top score (first element)', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/leaderboard_update.dart'],
-    );
+    final process = await Process.start('dart', [
+      'run',
+      'bin/leaderboard_update.dart',
+    ]);
 
     await process.stdin.close();
 
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
+    final output = await process.stdout
+        .transform(const SystemEncoding().decoder)
+        .join();
     final exitCode = await process.exitCode;
 
     expect(
@@ -28,16 +29,17 @@ void main() {
     );
   });
 
-  test('Should update the lowest score to 915', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/leaderboard_update.dart'],
-    );
+  test('Should print leaderboard with updated lowest score', () async {
+    final process = await Process.start('dart', [
+      'run',
+      'bin/leaderboard_update.dart',
+    ]);
 
     await process.stdin.close();
 
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
+    final output = await process.stdout
+        .transform(const SystemEncoding().decoder)
+        .join();
     final exitCode = await process.exitCode;
 
     expect(
@@ -53,31 +55,4 @@ void main() {
       reason: 'The program should exit successfully without errors.',
     );
   });
-
-  test('Should print the complete updated leaderboard', () async {
-    final process = await Process.start(
-      'dart',
-      ['run', 'bin/leaderboard_update.dart'],
-    );
-
-    await process.stdin.close();
-
-    final output =
-        await process.stdout.transform(const SystemEncoding().decoder).join();
-    final exitCode = await process.exitCode;
-
-    expect(
-      output,
-      contains('[1200, 1150, 1020, 950, 915]'),
-      reason:
-          'The program should print the entire updated leaderboard list. '
-          'Make sure you print the scores list after updating the last element.',
-    );
-    expect(
-      exitCode,
-      equals(0),
-      reason: 'The program should exit successfully without errors.',
-    );
-  });
 }
-
