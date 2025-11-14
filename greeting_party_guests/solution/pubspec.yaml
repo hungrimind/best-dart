@@ -2,6 +2,6 @@ name: greeting_party_guests
 description: Practice iterating through a list using for-in loop to perform actions on each element
 version: 1.0.0
 environment:
-  sdk: ">=3.10.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 dev_dependencies:
   test: ^1.25.0
