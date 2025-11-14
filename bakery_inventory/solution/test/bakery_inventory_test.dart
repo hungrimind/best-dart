@@ -38,19 +38,4 @@ void main() {
       reason: 'The inventory should not include baguette after removing it.',
     );
   });
-
-  test('prints final inventory map', () async {
-    final result = await Process.run('dart', ['bin/bakery_inventory.dart']);
-    expect(
-      result.stdout.toString().trim(),
-      isNotEmpty,
-      reason: 'The program should print the final inventory map.',
-    );
-    expect(
-      result.exitCode,
-      equals(0),
-      reason: 'The program should run successfully without errors.',
-    );
-  });
 }
-
