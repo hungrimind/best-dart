@@ -1,0 +1,11 @@
+name: weather_report
+description: A lesson on calling functions and capturing return values to create a personalized weather report.
+version: 1.0.0
+
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
+
+
