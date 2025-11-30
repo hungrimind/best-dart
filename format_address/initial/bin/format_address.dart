@@ -8,4 +8,3 @@
 void main() {
   formatAddress('123 Main St', city: 'Anytown', postalCode: '12345');
 }
-
