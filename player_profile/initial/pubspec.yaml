@@ -2,7 +2,6 @@ name: player_profile
 description: Practice defining properties inside a Dart class with appropriate data types and default values
 version: 1.0.0
 environment:
-  sdk: '>=3.10.0 <4.0.0'
+  sdk: ">=3.10.0 <4.0.0"
 dev_dependencies:
   test: ^1.25.0
-
