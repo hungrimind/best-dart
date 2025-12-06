@@ -2,7 +2,6 @@ name: take_damage
 description: Learn to create methods in Dart classes that modify object properties
 version: 1.0.0
 environment:
-  sdk: '>=3.10.0 <4.0.0'
+  sdk: ">=3.10.0 <4.0.0"
 dev_dependencies:
   test: ^1.25.0
-
