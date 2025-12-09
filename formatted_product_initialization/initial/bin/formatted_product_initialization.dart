@@ -5,9 +5,7 @@ class Product {
   // TODO: Add constructor with initializer list
   // The name should be converted to uppercase
   // The price should be validated: if negative, set to 0.0
-  Product(String name, double price)
-      : name = name,
-        price = price;
+  Product(String name, double price) : name = name, price = price;
 
   @override
   String toString() => 'Product(name: $name, price: $price)';
@@ -22,4 +20,3 @@ void main() {
   print(product2);
   // Expected output: Product(name: TABLET, price: 0.0)
 }
-

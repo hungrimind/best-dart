@@ -3,8 +3,8 @@ class Product {
   final double price;
 
   Product(String name, double price)
-      : name = name.toUpperCase(),
-        price = price < 0 ? 0.0 : price;
+    : name = name.toUpperCase(),
+      price = price < 0 ? 0.0 : price;
 
   @override
   String toString() => 'Product(name: $name, price: $price)';
@@ -19,4 +19,3 @@ void main() {
   print(product2);
   // Output: Product(name: TABLET, price: 0.0)
 }
-
