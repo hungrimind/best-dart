@@ -1,0 +1,8 @@
+name: product_inventory_from_map
+description: Practice creating named constructors to initialize objects from Maps
+version: 1.0.0
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dev_dependencies:
+  test: ^1.25.0
+
