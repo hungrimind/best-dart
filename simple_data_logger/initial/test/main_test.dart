@@ -19,40 +19,67 @@ Future<String> getUserCode() async {
 }
 
 void main() {
-  test('Program should handle data events and print "Data received: [value]"',
-      () async {
-    final output = await runMain();
-    expect(output, contains('Data received: 42'),
-        reason: 'Expected output to contain "Data received: 42" when stream emits data');
-    expect(output, contains('Data received: 100'),
-        reason: 'Expected output to contain "Data received: 100" when stream emits data');
-  });
+  test(
+    'Program should handle data events and print "Data received: [value]"',
+    () async {
+      final output = await runMain();
+      expect(
+        output,
+        contains('Data received: 42'),
+        reason:
+            'Expected output to contain "Data received: 42" when stream emits data',
+      );
+      expect(
+        output,
+        contains('Data received: 100'),
+        reason:
+            'Expected output to contain "Data received: 100" when stream emits data',
+      );
+    },
+  );
 
   test('Program should handle errors and print "Error occurred."', () async {
     final output = await runMain();
-    expect(output, contains('Error occurred.'),
-        reason: 'Expected output to contain "Error occurred." when stream emits an error');
+    expect(
+      output,
+      contains('Error occurred.'),
+      reason:
+          'Expected output to contain "Error occurred." when stream emits an error',
+    );
   });
 
-  test('Program should handle completion and print "Stream is now closed."',
-      () async {
-    final output = await runMain();
-    expect(output, contains('Stream is now closed.'),
-        reason: 'Expected output to contain "Stream is now closed." when stream completes');
-  });
+  test(
+    'Program should handle completion and print "Stream is now closed."',
+    () async {
+      final output = await runMain();
+      expect(
+        output,
+        contains('Stream is now closed.'),
+        reason:
+            'Expected output to contain "Stream is now closed." when stream completes',
+      );
+    },
+  );
 
   test('Program should use listen() method with onError parameter', () async {
     final code = await getUserCode();
     final pattern = RegExp(r'onError\s*:', multiLine: true);
-    expect(code, matches(pattern),
-        reason: 'Expected code to use listen() method with onError parameter to handle stream errors');
+    expect(
+      code,
+      matches(pattern),
+      reason:
+          'Expected code to use listen() method with onError parameter to handle stream errors',
+    );
   });
 
   test('Program should use listen() method with onDone parameter', () async {
     final code = await getUserCode();
     final pattern = RegExp(r'onDone\s*:', multiLine: true);
-    expect(code, matches(pattern),
-        reason: 'Expected code to use listen() method with onDone parameter to handle stream completion');
+    expect(
+      code,
+      matches(pattern),
+      reason:
+          'Expected code to use listen() method with onDone parameter to handle stream completion',
+    );
   });
 }
-

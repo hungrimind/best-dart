@@ -1,0 +1,7 @@
+name: stream_controller_sink
+description: Practice adding data to a StreamController using the add method
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+dev_dependencies:
+  test: ^1.25.0
