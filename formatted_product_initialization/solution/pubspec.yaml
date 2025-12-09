@@ -1,0 +1,8 @@
+name: formatted_product_initialization
+description: A lesson on using initializer lists in Dart constructors to format and validate properties
+version: 1.0.0
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dev_dependencies:
+  test: ^1.25.0
+
