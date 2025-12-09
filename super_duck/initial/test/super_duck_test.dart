@@ -26,8 +26,7 @@ void main() {
       expect(
         result.stdout.toString(),
         contains('Swoosh! I\'m flying!'),
-        reason:
-            'SuperDuck should have the fly() method from the CanFly mixin',
+        reason: 'SuperDuck should have the fly() method from the CanFly mixin',
       );
     });
 
@@ -48,8 +47,12 @@ void main() {
 
       // Verify fly() is called on SuperDuck, not on regular Duck
       final lines = output.split('\n');
-      final flyIndex = lines.indexWhere((line) => line.contains('Swoosh! I\'m flying!'));
-      final swimIndex = lines.indexWhere((line) => line.contains('Super Donald is swimming'));
+      final flyIndex = lines.indexWhere(
+        (line) => line.contains('Swoosh! I\'m flying!'),
+      );
+      final swimIndex = lines.indexWhere(
+        (line) => line.contains('Super Donald is swimming'),
+      );
 
       expect(
         flyIndex,
@@ -76,8 +79,12 @@ void main() {
       // Verify that regular duck's output appears before super duck's fly message
       // This confirms regular duck doesn't have fly() method
       final lines = output.split('\n');
-      final regularSwimIndex = lines.indexWhere((line) => line.contains('Donald is swimming'));
-      final flyIndex = lines.indexWhere((line) => line.contains('Swoosh! I\'m flying!'));
+      final regularSwimIndex = lines.indexWhere(
+        (line) => line.contains('Donald is swimming'),
+      );
+      final flyIndex = lines.indexWhere(
+        (line) => line.contains('Swoosh! I\'m flying!'),
+      );
 
       expect(
         regularSwimIndex,
@@ -88,9 +95,9 @@ void main() {
       expect(
         flyIndex,
         greaterThan(regularSwimIndex),
-        reason: 'Regular Duck should not have fly() method - only SuperDuck with mixin can fly',
+        reason:
+            'Regular Duck should not have fly() method - only SuperDuck with mixin can fly',
       );
     });
   });
 }
-

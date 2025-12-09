@@ -1,0 +1,8 @@
+name: fetching_welcome_message
+description: A lesson on using async/await to fetch and handle asynchronous data
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0

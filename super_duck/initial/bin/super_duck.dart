@@ -17,7 +17,7 @@ class Duck {
 // Remember to use the 'with' keyword to apply the mixin
 class SuperDuck extends Duck {
   SuperDuck(String name) : super(name);
-  
+
   void fly() {
     throw UnimplementedError();
   }
@@ -35,4 +35,3 @@ void main() {
   superDuck.swim();
   superDuck.fly();
 }
-
