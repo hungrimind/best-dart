@@ -1,0 +1,8 @@
+name: super_duck
+description: Learn how to create and use mixins in Dart to add abilities to classes
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+dev_dependencies:
+  test: ^1.25.0
+
