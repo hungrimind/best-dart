@@ -2,7 +2,6 @@ name: method_override
 description: Learn how to override methods using the @override annotation in Dart
 version: 1.0.0
 environment:
-  sdk: '>=3.10.0 <4.0.0'
+  sdk: ">=3.10.0 <4.0.0"
 dev_dependencies:
   test: ^1.25.0
-

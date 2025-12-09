@@ -24,4 +24,3 @@ void main() {
   print('\nCalling save() on Receipt:');
   receipt.save();
 }
-
