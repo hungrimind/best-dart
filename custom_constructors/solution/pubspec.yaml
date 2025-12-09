@@ -1,0 +1,9 @@
+name: custom_constructors
+description: A Dart project for learning how to create custom constructors with parameters.
+version: 1.0.0
+
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+
+dev_dependencies:
+  test: ^1.25.0
