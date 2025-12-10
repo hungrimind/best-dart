@@ -1,0 +1,8 @@
+name: safe_data_parsing
+description: Practice using try-catch blocks to handle runtime errors when parsing strings to integers
+version: 1.0.0
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dev_dependencies:
+  test: ^1.25.0
+

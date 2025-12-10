@@ -3,13 +3,11 @@ import 'package:test/test.dart';
 
 void main() {
   group('StreamController add - Order status updates', () {
-    test('should output all three status updates in correct order',
-        () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/stream_controller_sink.dart'],
-        runInShell: true,
-      );
+    test('should output all three status updates in correct order', () async {
+      final result = await Process.run('dart', [
+        'run',
+        'bin/stream_controller_sink.dart',
+      ], runInShell: true);
 
       expect(
         result.exitCode,
@@ -18,7 +16,10 @@ void main() {
       );
 
       final output = result.stdout.toString().trim();
-      final lines = output.split('\n').where((line) => line.isNotEmpty).toList();
+      final lines = output
+          .split('\n')
+          .where((line) => line.isNotEmpty)
+          .toList();
 
       expect(
         lines.length,
@@ -47,14 +48,16 @@ void main() {
     });
 
     test('should output "Order received" as first status', () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/stream_controller_sink.dart'],
-        runInShell: true,
-      );
+      final result = await Process.run('dart', [
+        'run',
+        'bin/stream_controller_sink.dart',
+      ], runInShell: true);
 
       final output = result.stdout.toString().trim();
-      final lines = output.split('\n').where((line) => line.isNotEmpty).toList();
+      final lines = output
+          .split('\n')
+          .where((line) => line.isNotEmpty)
+          .toList();
 
       expect(
         lines.isNotEmpty && lines[0] == 'Order received',
@@ -64,14 +67,16 @@ void main() {
     });
 
     test('should output all status updates using add', () async {
-      final result = await Process.run(
-        'dart',
-        ['run', 'bin/stream_controller_sink.dart'],
-        runInShell: true,
-      );
+      final result = await Process.run('dart', [
+        'run',
+        'bin/stream_controller_sink.dart',
+      ], runInShell: true);
 
       final output = result.stdout.toString().trim();
-      final lines = output.split('\n').where((line) => line.isNotEmpty).toList();
+      final lines = output
+          .split('\n')
+          .where((line) => line.isNotEmpty)
+          .toList();
 
       expect(
         lines.contains('Order received') &&
@@ -84,4 +89,3 @@ void main() {
     });
   });
 }
-

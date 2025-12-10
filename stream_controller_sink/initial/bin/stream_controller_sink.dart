@@ -13,10 +13,9 @@ void main() {
   // 1. "Order received"
   // 2. "Processing item"
   // 3. "Shipped"
-  
+
   // Your code here: Add the status updates to the stream
 
   // Close the controller to release resources
   orderStatusController.close();
 }
-

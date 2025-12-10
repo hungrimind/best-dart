@@ -17,4 +17,3 @@ void main() {
   // Close the controller to release resources
   orderStatusController.close();
 }
-
