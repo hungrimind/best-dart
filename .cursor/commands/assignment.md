@@ -152,4 +152,6 @@ When this command is run:
 4. Output it wrapped in a markdown code block (triple backticks)
 5. The output should be ready to copy-paste directly
 
---- End Command ---
+---
+
+End Command ---
