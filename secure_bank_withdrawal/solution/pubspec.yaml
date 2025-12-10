@@ -1,0 +1,8 @@
+name: secure_bank_withdrawal
+description: Practice using the throw keyword to signal errors when invalid withdrawal amounts are attempted
+version: 1.0.0
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+dev_dependencies:
+  test: ^1.25.0
+
