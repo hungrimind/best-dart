@@ -16,3 +16,4 @@ Future<void> printWelcomeMessage() async {
 void main() {
   printWelcomeMessage();
 }
+

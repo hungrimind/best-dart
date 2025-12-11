@@ -26,3 +26,4 @@ void main() {
   print('Health: ${player2.health}');
   print('Score: ${player2.score}');
 }
+

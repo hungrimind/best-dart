@@ -19,3 +19,4 @@ void main() {
   player.takeDamage(10);
   print("Health after taking 10 more damage: ${player.health}");
 }
+
