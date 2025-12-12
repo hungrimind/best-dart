@@ -1,5 +1,3 @@
-// main.dart
-
 // This function simulates fetching data from a server.
 // After a 2-second delay, it completes with the welcome message.
 Future<String> fetchWelcomeMessage() async {
