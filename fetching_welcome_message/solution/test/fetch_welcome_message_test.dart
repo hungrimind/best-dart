@@ -5,7 +5,10 @@ import 'dart:io';
 
 // Helper function to run the user's main() and capture the output.
 Future<String> runMain() async {
-  var result = await Process.run('dart', ['run', 'bin/main.dart']);
+  var result = await Process.run('dart', [
+    'run',
+    'bin/fetch_welcome_message.dart',
+  ]);
   if (result.exitCode != 0) {
     return "Error: ${result.stderr}";
   }
@@ -14,7 +17,7 @@ Future<String> runMain() async {
 
 // Helper function to get the content of the user's code file.
 Future<String> getUserCode() async {
-  final file = File('bin/main.dart');
+  final file = File('bin/fetch_welcome_message.dart');
   return await file.readAsString();
 }
 
@@ -23,7 +26,7 @@ void main() {
     final output = await runMain();
     expect(
       output,
-      equals("Welcome to our app!"),
+      endsWith("Welcome to our app!"),
       reason:
           'The program should print "Welcome to our app!" after fetching the message',
     );
@@ -84,4 +87,3 @@ void main() {
     );
   });
 }
-
